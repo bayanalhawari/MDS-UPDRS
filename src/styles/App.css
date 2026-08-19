@@ -1,0 +1,15 @@
+/**
+ * App.css — layout for the App root component
+ */
+
+.app-layout {
+  display: flex;
+  flex-direction: column; /* Navbar on top, body below */
+  height: 100vh;
+  width: 100%;
+}
+
+.app-body {
+  display: flex;          /* Sidebar and content side by side */
+  flex: 1;
+}
