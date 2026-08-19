@@ -1,0 +1,3259 @@
+{
+  "templateId" : "MDS-UPDRS",
+  "semVer" : "3.0.0",
+  "version" : "2.3",
+  "defaultLanguage" : "en",
+  "languages" : [ "en" ],
+  "tree" : {
+    "id" : "mds-updrs",
+    "name" : "MDS-UPDRS",
+    "localizedName" : "MDS-UPDRS",
+    "rmType" : "COMPOSITION",
+    "nodeId" : "openEHR-EHR-COMPOSITION.report.v1",
+    "min" : 1,
+    "max" : 1,
+    "localizedNames" : {
+      "en" : "MDS-UPDRS"
+    },
+    "localizedDescriptions" : {
+      "en" : "Document to communicate information to others, commonly in response to a request from another party."
+    },
+    "aqlPath" : "",
+    "children" : [ {
+      "id" : "context",
+      "rmType" : "EVENT_CONTEXT",
+      "nodeId" : "",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/context",
+      "children" : [ {
+        "id" : "site_id",
+        "name" : "Site ID",
+        "localizedName" : "Site ID",
+        "rmType" : "DV_TEXT",
+        "nodeId" : "at0036",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Site ID"
+        },
+        "localizedDescriptions" : {
+          "en" : ""
+        },
+        "aqlPath" : "/context/other_context[at0001]/items[at0036]/value",
+        "inputs" : [ {
+          "type" : "TEXT"
+        } ]
+      }, {
+        "id" : "participation",
+        "name" : "PARTICIPATION",
+        "localizedName" : "PARTICIPATION",
+        "rmType" : "PARTICIPATION",
+        "nodeId" : "at0032",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "PARTICIPATION"
+        },
+        "localizedDescriptions" : {
+          "en" : ""
+        },
+        "aqlPath" : "/context/participations[at0032]",
+        "children" : [ {
+          "id" : "party_identified",
+          "name" : "PARTY_IDENTIFIED",
+          "localizedName" : "PARTY_IDENTIFIED",
+          "rmType" : "PARTY_IDENTIFIED",
+          "nodeId" : "at0033",
+          "min" : 1,
+          "max" : 1,
+          "localizedNames" : {
+            "en" : "PARTY_IDENTIFIED"
+          },
+          "localizedDescriptions" : {
+            "en" : ""
+          },
+          "aqlPath" : "/context/participations[at0032]/performer[at0033]",
+          "children" : [ {
+            "id" : "party_ref",
+            "name" : "PARTY_REF",
+            "localizedName" : "PARTY_REF",
+            "rmType" : "PARTY_REF",
+            "nodeId" : "at0034",
+            "min" : 1,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "PARTY_REF"
+            },
+            "localizedDescriptions" : {
+              "en" : ""
+            },
+            "aqlPath" : "/context/participations[at0032]/performer[at0033]/external_ref[at0034]",
+            "children" : [ {
+              "id" : "object_id",
+              "name" : "OBJECT_ID",
+              "localizedName" : "OBJECT_ID",
+              "rmType" : "OBJECT_ID",
+              "nodeId" : "at0035",
+              "min" : 1,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "OBJECT_ID"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/context/participations[at0032]/performer[at0033]/external_ref[at0034]/id[at0035]",
+              "children" : [ {
+                "id" : "value",
+                "name" : "Value",
+                "rmType" : "STRING",
+                "min" : 1,
+                "max" : 1,
+                "aqlPath" : "/context/participations[at0032]/performer[at0033]/external_ref[at0034]/id[at0035]/value",
+                "inputs" : [ {
+                  "type" : "TEXT"
+                } ],
+                "inContext" : true
+              } ]
+            }, {
+              "id" : "namespace",
+              "name" : "Namespace",
+              "rmType" : "STRING",
+              "min" : 1,
+              "max" : 1,
+              "aqlPath" : "/context/participations[at0032]/performer[at0033]/external_ref[at0034]/namespace",
+              "inputs" : [ {
+                "type" : "TEXT"
+              } ],
+              "inContext" : true
+            }, {
+              "id" : "type",
+              "name" : "Type",
+              "rmType" : "STRING",
+              "min" : 1,
+              "max" : 1,
+              "aqlPath" : "/context/participations[at0032]/performer[at0033]/external_ref[at0034]/type",
+              "inputs" : [ {
+                "type" : "TEXT"
+              } ],
+              "inContext" : true
+            } ]
+          } ]
+        }, {
+          "id" : "function",
+          "name" : "function",
+          "localizedName" : "function",
+          "rmType" : "DV_TEXT",
+          "nodeId" : "at0041",
+          "min" : 1,
+          "max" : 1,
+          "localizedNames" : {
+            "en" : "function"
+          },
+          "localizedDescriptions" : {
+            "en" : ""
+          },
+          "aqlPath" : "/context/participations[at0032]/function[at0041]",
+          "inputs" : [ {
+            "type" : "TEXT",
+            "list" : [ {
+              "value" : "Investigator",
+              "label" : "Investigator"
+            } ],
+            "listOpen" : false
+          } ]
+        } ]
+      }, {
+        "id" : "setting",
+        "name" : "setting",
+        "localizedName" : "setting",
+        "rmType" : "DV_CODED_TEXT",
+        "nodeId" : "at0039",
+        "min" : 1,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "setting"
+        },
+        "localizedDescriptions" : {
+          "en" : ""
+        },
+        "aqlPath" : "/context/setting[at0039]",
+        "inputs" : [ {
+          "suffix" : "code",
+          "type" : "CODED_TEXT",
+          "list" : [ {
+            "value" : "232",
+            "label" : "secondary medical care",
+            "localizedLabels" : {
+              "en" : "secondary medical care"
+            }
+          } ],
+          "terminology" : "openehr"
+        } ]
+      }, {
+        "id" : "location",
+        "rmType" : "STRING",
+        "nodeId" : "",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/context/location",
+        "inputs" : [ {
+          "type" : "TEXT"
+        } ]
+      }, {
+        "id" : "start_time",
+        "name" : "Start_time",
+        "rmType" : "DV_DATE_TIME",
+        "min" : 1,
+        "max" : 1,
+        "aqlPath" : "/context/start_time",
+        "inputs" : [ {
+          "type" : "DATETIME"
+        } ],
+        "inContext" : true
+      } ]
+    }, {
+      "id" : "part_i",
+      "name" : "Part I",
+      "localizedName" : "Part I",
+      "rmType" : "SECTION",
+      "nodeId" : "openEHR-EHR-SECTION.part_i.v0",
+      "min" : 0,
+      "max" : 1,
+      "localizedNames" : {
+        "en" : "Part I"
+      },
+      "localizedDescriptions" : {
+        "en" : "Part I"
+      },
+      "aqlPath" : "/content[openEHR-EHR-SECTION.part_i.v0]",
+      "children" : [ {
+        "id" : "non-motor_aspects_of_experiences_of_daily_living_nm-edl",
+        "name" : "Non-Motor Aspects of Experiences of Daily Living (nM-EDL)",
+        "localizedName" : "Non-Motor Aspects of Experiences of Daily Living (nM-EDL)",
+        "rmType" : "OBSERVATION",
+        "nodeId" : "at0002",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Non-Motor Aspects of Experiences of Daily Living (nM-EDL)"
+        },
+        "localizedDescriptions" : {
+          "en" : ""
+        },
+        "aqlPath" : "/content[openEHR-EHR-SECTION.part_i.v0]/items[at0002]",
+        "children" : [ {
+          "id" : "language",
+          "name" : "Language",
+          "rmType" : "CODE_PHRASE",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.part_i.v0]/items[at0002]/language",
+          "inContext" : true
+        }, {
+          "id" : "encoding",
+          "name" : "Encoding",
+          "rmType" : "CODE_PHRASE",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.part_i.v0]/items[at0002]/encoding",
+          "inContext" : true
+        }, {
+          "id" : "subject",
+          "name" : "Subject",
+          "rmType" : "PARTY_PROXY",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.part_i.v0]/items[at0002]/subject",
+          "inputs" : [ {
+            "suffix" : "id",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "id_scheme",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "id_namespace",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "name",
+            "type" : "TEXT"
+          } ],
+          "inContext" : true
+        } ]
+      } ]
+    }, {
+      "id" : "part_ii",
+      "name" : "Part II",
+      "localizedName" : "Part II",
+      "rmType" : "SECTION",
+      "nodeId" : "openEHR-EHR-SECTION.part_ii.v0",
+      "min" : 0,
+      "max" : 1,
+      "localizedNames" : {
+        "en" : "Part II"
+      },
+      "localizedDescriptions" : {
+        "en" : "Part II"
+      },
+      "aqlPath" : "/content[openEHR-EHR-SECTION.part_ii.v0]",
+      "children" : [ {
+        "id" : "motor_aspects_of_experiences_of_daily_living_m-edl",
+        "name" : "Motor Aspects of Experiences of Daily Living (M-EDL)",
+        "localizedName" : "Motor Aspects of Experiences of Daily Living (M-EDL)",
+        "rmType" : "OBSERVATION",
+        "nodeId" : "at0002",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Motor Aspects of Experiences of Daily Living (M-EDL)"
+        },
+        "localizedDescriptions" : {
+          "en" : ""
+        },
+        "aqlPath" : "/content[openEHR-EHR-SECTION.part_ii.v0]/items[at0002]",
+        "children" : [ {
+          "id" : "language",
+          "name" : "Language",
+          "rmType" : "CODE_PHRASE",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.part_ii.v0]/items[at0002]/language",
+          "inContext" : true
+        }, {
+          "id" : "encoding",
+          "name" : "Encoding",
+          "rmType" : "CODE_PHRASE",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.part_ii.v0]/items[at0002]/encoding",
+          "inContext" : true
+        }, {
+          "id" : "subject",
+          "name" : "Subject",
+          "rmType" : "PARTY_PROXY",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.part_ii.v0]/items[at0002]/subject",
+          "inputs" : [ {
+            "suffix" : "id",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "id_scheme",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "id_namespace",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "name",
+            "type" : "TEXT"
+          } ],
+          "inContext" : true
+        } ]
+      } ]
+    }, {
+      "id" : "part_iii",
+      "name" : "Part III",
+      "localizedName" : "Part III",
+      "rmType" : "SECTION",
+      "nodeId" : "openEHR-EHR-SECTION.part_iii.v0",
+      "min" : 0,
+      "max" : 1,
+      "localizedNames" : {
+        "en" : "Part III"
+      },
+      "localizedDescriptions" : {
+        "en" : "Part III"
+      },
+      "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]",
+      "children" : [ {
+        "id" : "motor_examination",
+        "name" : "Motor Examination",
+        "localizedName" : "Motor Examination",
+        "rmType" : "OBSERVATION",
+        "nodeId" : "openEHR-EHR-OBSERVATION.updrs_part_iii.v0",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Motor Examination"
+        },
+        "localizedDescriptions" : {
+          "en" : "This portion of the scale assesses the motor signs of PD. In administering Part III of the MDS-UPDRS\nthe examiner should comply with the following guidelines:\nAt the top of the form, mark whether the patient is on medication for treating the symptoms of Parkinson's disease\nand, if on levodopa, the time since the last dose.\nAlso, if the patient is receiving medication for treating the symptoms of Parkinson’s disease, mark the patient’s\nclinical state using the following definitions:\nON is the typical functional state when patients are receiving medication and have a good response.\nOFF is the typical functional state when patients have a poor response in spite of taking medications.\nThe investigator should “rate what you see.” Admittedly, concurrent medical problems such as stroke, paralysis,\narthritis, contracture, and orthopedic problems such as hip or knee replacement and scoliosis may interfere with\nindividual items in the motor examination. In situations where it is absolutely impossible to test (e.g., amputations,\nplegia, limb in a cast), use the notation “UR” for Unable to Rate. Otherwise, rate the performance of each task as the\npatient performs in the context of co-morbidities.\nAll items must have an integer rating (no half points, no missing ratings).\nSpecific instructions are provided for the testing of each item. These should be followed in all instances. The\ninvestigator demonstrates while describing tasks the patient is to perform and rates function immediately thereafter.\nFor Global Spontaneous Movement and Rest Tremor items (3.14 and 3.17), these items have been placed\npurposefully at the end of the scale because clinical information pertinent to the score will be obtained throughout the\nentire examination.\nAt the end of the rating, indicate if dyskinesia (chorea or dystonia) was present at the time of the examination, and if\nso, whether these movements interfered with the motor examination."
+        },
+        "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]",
+        "children" : [ {
+          "id" : "any_event",
+          "name" : "Any event",
+          "localizedName" : "Any event",
+          "rmType" : "EVENT",
+          "nodeId" : "at0002",
+          "min" : 0,
+          "max" : -1,
+          "localizedNames" : {
+            "en" : "Any event"
+          },
+          "localizedDescriptions" : {
+            "en" : "@ internal @"
+          },
+          "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]",
+          "children" : [ {
+            "id" : "on_medication",
+            "name" : "On medication?",
+            "localizedName" : "On medication?",
+            "rmType" : "DV_BOOLEAN",
+            "nodeId" : "at0230",
+            "min" : 0,
+            "max" : 1,
+            "dependsOn" : [ "a3.7._toe_tapping", "a3.4._finger_tapping", "a3.9._arising_from_chair", "dyskinesia_state", "a3.14._global_spontaneity_of_movements_body_bradykinesia", "a3.18._constancy_of_rest_tremor", "a3.1._speech", "a3.3._rigidity", "a3.10._gait", "a3.12._postural_stability", "a3.15._postural_tremor_of_the_hands", "dyskinesia_during_examination_0_1", "a3.17._rest_tremor_amplitude", "a3.13._posture", "a3.6._pronation-supination_movements_of_hands", "a3.2._facial_expression", "total_score", "a3.8._leg_agility", "hoehn_and_yahr_stage", "a3.16._kinetic_tremor_of_the_hands", "a3.11._freezing_of_gait", "a3.5._hand_movements" ],
+            "localizedNames" : {
+              "en" : "On medication?"
+            },
+            "localizedDescriptions" : {
+              "en" : "True if the patient is on medication"
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/state[at0228]/items[at0230]/value",
+            "inputs" : [ {
+              "type" : "BOOLEAN"
+            } ]
+          }, {
+            "id" : "medication_state",
+            "name" : "Medication state",
+            "localizedName" : "Medication state",
+            "rmType" : "DV_CODED_TEXT",
+            "nodeId" : "at0231",
+            "min" : 0,
+            "max" : 1,
+            "dependsOn" : [ "a3.7._toe_tapping", "a3.4._finger_tapping", "a3.9._arising_from_chair", "dyskinesia_state", "a3.14._global_spontaneity_of_movements_body_bradykinesia", "a3.18._constancy_of_rest_tremor", "a3.1._speech", "a3.3._rigidity", "a3.10._gait", "a3.12._postural_stability", "a3.15._postural_tremor_of_the_hands", "dyskinesia_during_examination_0_1", "a3.17._rest_tremor_amplitude", "a3.13._posture", "a3.6._pronation-supination_movements_of_hands", "a3.2._facial_expression", "total_score", "a3.8._leg_agility", "hoehn_and_yahr_stage", "a3.16._kinetic_tremor_of_the_hands", "a3.11._freezing_of_gait", "a3.5._hand_movements" ],
+            "localizedNames" : {
+              "en" : "Medication state"
+            },
+            "localizedDescriptions" : {
+              "en" : "Indicate whether the medication state \"On\" or \"Off\" is, if the patient is on medication."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/state[at0228]/items[at0231]/value",
+            "inputs" : [ {
+              "suffix" : "code",
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "at0232",
+                "label" : "On",
+                "localizedLabels" : {
+                  "en" : "On"
+                },
+                "localizedDescriptions" : {
+                  "en" : "On is the typical functional state when patients are receiving medication and have a good response"
+                }
+              }, {
+                "value" : "at0233",
+                "label" : "Off",
+                "localizedLabels" : {
+                  "en" : "Off"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Off is the typical functional state when patients have a poor response in spite of taking medications"
+                }
+              } ]
+            } ]
+          }, {
+            "id" : "on_levodopa",
+            "name" : "On levodopa?",
+            "localizedName" : "On levodopa?",
+            "rmType" : "DV_BOOLEAN",
+            "nodeId" : "at0234",
+            "min" : 0,
+            "max" : 1,
+            "dependsOn" : [ "a3.7._toe_tapping", "a3.4._finger_tapping", "a3.9._arising_from_chair", "dyskinesia_state", "a3.14._global_spontaneity_of_movements_body_bradykinesia", "a3.18._constancy_of_rest_tremor", "a3.1._speech", "a3.3._rigidity", "a3.10._gait", "a3.12._postural_stability", "a3.15._postural_tremor_of_the_hands", "dyskinesia_during_examination_0_1", "a3.17._rest_tremor_amplitude", "a3.13._posture", "a3.6._pronation-supination_movements_of_hands", "a3.2._facial_expression", "total_score", "a3.8._leg_agility", "hoehn_and_yahr_stage", "a3.16._kinetic_tremor_of_the_hands", "a3.11._freezing_of_gait", "a3.5._hand_movements" ],
+            "localizedNames" : {
+              "en" : "On levodopa?"
+            },
+            "localizedDescriptions" : {
+              "en" : "True if  the patient is on levodopa"
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/state[at0228]/items[at0234]/value",
+            "inputs" : [ {
+              "type" : "BOOLEAN"
+            } ]
+          }, {
+            "id" : "last_levodopa_dose",
+            "name" : "Last levodopa dose",
+            "localizedName" : "Last levodopa dose",
+            "rmType" : "DV_DURATION",
+            "nodeId" : "at0241",
+            "min" : 0,
+            "max" : 1,
+            "dependsOn" : [ "a3.7._toe_tapping", "a3.4._finger_tapping", "a3.9._arising_from_chair", "dyskinesia_state", "a3.14._global_spontaneity_of_movements_body_bradykinesia", "a3.18._constancy_of_rest_tremor", "a3.1._speech", "a3.3._rigidity", "a3.10._gait", "a3.12._postural_stability", "a3.15._postural_tremor_of_the_hands", "dyskinesia_during_examination_0_1", "a3.17._rest_tremor_amplitude", "a3.13._posture", "a3.6._pronation-supination_movements_of_hands", "a3.2._facial_expression", "total_score", "a3.8._leg_agility", "hoehn_and_yahr_stage", "a3.16._kinetic_tremor_of_the_hands", "a3.11._freezing_of_gait", "a3.5._hand_movements" ],
+            "localizedNames" : {
+              "en" : "Last levodopa dose"
+            },
+            "localizedDescriptions" : {
+              "en" : " If the patient is on levodopa, minutes since last levodopa dose"
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/state[at0228]/items[at0241]/value",
+            "inputs" : [ {
+              "suffix" : "minute",
+              "type" : "INTEGER",
+              "validation" : {
+                "range" : {
+                  "minOp" : ">=",
+                  "min" : 0
+                }
+              },
+              "defaultValue" : 0
+            } ]
+          }, {
+            "id" : "a3.1._speech",
+            "name" : "3.1. Speech",
+            "localizedName" : "3.1. Speech",
+            "rmType" : "DV_ORDINAL",
+            "nodeId" : "at0005",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "3.1. Speech"
+            },
+            "localizedDescriptions" : {
+              "en" : "Listen to the patient’s free-flowing speech and engage in conversation if\nnecessary. Suggested topics: ask about the patient’s work, hobbies, exercise, or how he got to the\ndoctor’s office. Evaluate volume, modulation (prosody), and clarity, including slurring, palilalia (repetition\nof syllables), and tachyphemia (rapid speech, running syllables together)."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0005]/value",
+            "inputs" : [ {
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "at0006",
+                "label" : "Normal",
+                "localizedLabels" : {
+                  "en" : "Normal"
+                },
+                "localizedDescriptions" : {
+                  "en" : "No speech problems"
+                },
+                "ordinal" : 0
+              }, {
+                "value" : "at0007",
+                "label" : "Slight",
+                "localizedLabels" : {
+                  "en" : "Slight"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Loss of modulation, diction, or volume, but still all words easy to understand"
+                },
+                "ordinal" : 1
+              }, {
+                "value" : "at0008",
+                "label" : "Mild",
+                "localizedLabels" : {
+                  "en" : "Mild"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Loss of modulation, diction, or volume, with a few words unclear, but the overall sentences easy to follow"
+                },
+                "ordinal" : 2
+              }, {
+                "value" : "at0009",
+                "label" : "Moderate",
+                "localizedLabels" : {
+                  "en" : "Moderate"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Speech is difficult to understand to the point that some, but not most, sentences are poorly understood"
+                },
+                "ordinal" : 3
+              }, {
+                "value" : "at0010",
+                "label" : "Severe",
+                "localizedLabels" : {
+                  "en" : "Severe"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Most speech is difficult to understand or unintelligible"
+                },
+                "ordinal" : 4
+              } ]
+            } ]
+          }, {
+            "id" : "a3.2._facial_expression",
+            "name" : "3.2. Facial expression",
+            "localizedName" : "3.2. Facial expression",
+            "rmType" : "DV_ORDINAL",
+            "nodeId" : "at0011",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "3.2. Facial expression"
+            },
+            "localizedDescriptions" : {
+              "en" : "Observe the patient sitting at rest for 10 seconds, without talking and also\nwhile talking. Observe eye-blink frequency, masked facies or loss of facial expression, spontaneous\nsmiling, and parting of lips."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0011]/value",
+            "inputs" : [ {
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "at0012",
+                "label" : "Normal",
+                "localizedLabels" : {
+                  "en" : "Normal"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Normal facial expression"
+                },
+                "ordinal" : 0
+              }, {
+                "value" : "at0013",
+                "label" : "Slight",
+                "localizedLabels" : {
+                  "en" : "Slight"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Minimal masked facies manifested only by decreased frequency of blinking"
+                },
+                "ordinal" : 1
+              }, {
+                "value" : "at0014",
+                "label" : "Mild",
+                "localizedLabels" : {
+                  "en" : "Mild"
+                },
+                "localizedDescriptions" : {
+                  "en" : "In addition to decreased eye-blink frequency, masked facies present in the lower face as well, namely fewer movements around the mouth, such as less  spontaneous smiling, but lips not parted"
+                },
+                "ordinal" : 2
+              }, {
+                "value" : "at0015",
+                "label" : "Moderate",
+                "localizedLabels" : {
+                  "en" : "Moderate"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Masked facies with lips parted some of the time when the mouth is at rest"
+                },
+                "ordinal" : 3
+              }, {
+                "value" : "at0016",
+                "label" : "Severe",
+                "localizedLabels" : {
+                  "en" : "Severe"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Masked facies with lips parted most of the time when the mouth is at rest"
+                },
+                "ordinal" : 4
+              } ]
+            } ]
+          }, {
+            "id" : "a3.3._rigidity",
+            "name" : "3.3. Rigidity",
+            "localizedName" : "3.3. Rigidity",
+            "rmType" : "CLUSTER",
+            "nodeId" : "at0020",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "3.3. Rigidity"
+            },
+            "localizedDescriptions" : {
+              "en" : "Rigidity is judged on slow passive movement of major joints with the patient in\na relaxed position and the examiner manipulating the limbs and neck. First, test without an activation\nmaneuver. Test and rate neck and each limb separately. For arms, test the wrist and elbow joints\nsimultaneously. For legs, test the hip and knee joints simultaneously. If no rigidity is detected, use an\nactivation maneuver such as tapping fingers, fist opening/closing, or heel tapping in a limb not being\ntested. Explain to the patient to go as limp as possible as you test for rigidity."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0020]",
+            "children" : [ {
+              "id" : "neck",
+              "name" : "Neck",
+              "localizedName" : "Neck",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0021",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Neck"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0020]/items[at0021]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0026",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No rigidity"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0027",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Rigidity only detected with activation maneuver"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0028",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Rigidity detected without the activation maneuver, but full range of motion is easily achieved"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0029",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Rigidity detected without the activation maneuver; full range of motion is achieved with effort"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0030",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Rigidity detected without the activation maneuver and full range of motion not achieved"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            }, {
+              "id" : "right_upper_extremity",
+              "name" : "Right upper extremity",
+              "localizedName" : "Right upper extremity",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0022",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Right upper extremity"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0020]/items[at0022]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0031",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No rigidity"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0032",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Rigidity only detected with activation maneuver"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0033",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Rigidity detected without the activation maneuver, but full range of motion is easily achieved"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0034",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Rigidity detected without the activation maneuver; full range of motion is achieved with effort"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0035",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Rigidity detected without the activation maneuver and full range of motion not achieved"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            }, {
+              "id" : "left_upper_extremity",
+              "name" : "Left upper extremity",
+              "localizedName" : "Left upper extremity",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0023",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Left upper extremity"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0020]/items[at0023]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0036",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No rigidity"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0037",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Rigidity only detected with activation maneuver"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0038",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Rigidity detected without the activation maneuver, but full range of motion is easily achieved"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0039",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Rigidity detected without the activation maneuver; full range of motion is achieved with effort"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0040",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Rigidity detected without the activation maneuver and full range of motion not achieved"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            }, {
+              "id" : "right_lower_extremity",
+              "name" : "Right lower extremity",
+              "localizedName" : "Right lower extremity",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0024",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Right lower extremity"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0020]/items[at0024]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0041",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No rigidity"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0042",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Rigidity only detected with activation maneuver"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0043",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Rigidity detected without the activation maneuver, but full range of motion is easily achieved"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0044",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Rigidity detected without the activation maneuver; full range of motion is achieved with effort"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0045",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Rigidity detected without the activation maneuver and full range of motion not achieved"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            }, {
+              "id" : "left_lower_extremity",
+              "name" : "Left lower extremity",
+              "localizedName" : "Left lower extremity",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0025",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Left lower extremity"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0020]/items[at0025]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0046",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No rigidity"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0047",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Rigidity only detected with activation maneuver"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0048",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Rigidity detected without the activation maneuver, but full range of motion is easily achieved"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0049",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Rigidity detected without the activation maneuver; full range of motion is achieved with effort"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0050",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Rigidity detected without the activation maneuver and full range of motion not achieved"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            } ]
+          }, {
+            "id" : "a3.4._finger_tapping",
+            "name" : "3.4. Finger tapping",
+            "localizedName" : "3.4. Finger tapping",
+            "rmType" : "CLUSTER",
+            "nodeId" : "at0051",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "3.4. Finger tapping"
+            },
+            "localizedDescriptions" : {
+              "en" : "Each hand is tested separately. Demonstrate the task, but do not continue to\nperform the task while the patient is being tested. Instruct the patient to tap the index finger on the\nthumb 10 times as quickly AND as big as possible. Rate each side separately, evaluating speed,\namplitude, hesitations, halts, and decrementing amplitude.\n"
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0051]",
+            "children" : [ {
+              "id" : "right_hand",
+              "name" : "Right hand",
+              "localizedName" : "Right hand",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0052",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Right hand"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0051]/items[at0052]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0054",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No problems"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0055",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) the regular rhythm is broken with one or two interruptions or hesitations of the tapping movement; b) slight slowing; c) the amplitude decrements near the end of the 10 taps"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0056",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) 3 to 5 interruptions during tapping; b) mild slowing; c) the amplitude decrements midway in the 10-tap sequence"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0057",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) more than 5 interruptions during tapping or at least one longer arrest (freeze) in ongoing movement; b) moderate slowing; c) the amplitude decrements starting after the 1st tap"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0058",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Cannot or can only barely perform the task because of slowing, interruptions, or decrements"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            }, {
+              "id" : "left_hand",
+              "name" : "Left hand",
+              "localizedName" : "Left hand",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0053",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Left hand"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0051]/items[at0053]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0059",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No problems"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0060",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) the regular rhythm is broken with one or two interruptions or hesitations of the tapping movement; b) slight slowing; c) the amplitude decrements near the end of the 10 taps"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0061",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) 3 to 5 interruptions during tapping; b) mild slowing; c) the amplitude decrements midway in the 10-tap sequence"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0062",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) more than 5 interruptions during tapping or at least one longer arrest (freeze) in ongoing movement; b) moderate slowing; c) the amplitude decrements starting after the 1st tap"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0063",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Cannot or can only barely perform the task because of slowing, interruptions, or decrements"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            } ]
+          }, {
+            "id" : "a3.5._hand_movements",
+            "name" : "3.5. Hand movements",
+            "localizedName" : "3.5. Hand movements",
+            "rmType" : "CLUSTER",
+            "nodeId" : "at0064",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "3.5. Hand movements"
+            },
+            "localizedDescriptions" : {
+              "en" : "Test each hand separately. Demonstrate the task, but do not continue to\nperform the task while the patient is being tested. Instruct the patient to make a tight fist with the arm\nbent at the elbow so that the palm faces the examiner. Have the patient open the hand 10 times as fully\nAND as quickly as possible. If the patient fails to make a tight fist or to open the hand fully, remind him/\nher to do so. Rate each side separately, evaluating speed, amplitude, hesitations, halts, and\ndecrementing amplitude.\n"
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0064]",
+            "children" : [ {
+              "id" : "right_hand",
+              "name" : "Right hand",
+              "localizedName" : "Right hand",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0065",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Right hand"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0064]/items[at0065]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0067",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No problems"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0068",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) the regular rhythm is broken with one or two interruptions or hesitations of the movement; b) slight slowing; c) the amplitude decrements near the end of the task"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0069",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) 3 to 5 interruptions during the movements; b) mild slowing; c) the amplitude decrements midway in the task"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0070",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) more than 5 interruptions during the movement or at least one longer arrest (freeze) in ongoing movement; b) moderate slowing; c) the amplitude decrements starting after the 1st open-and-close sequence"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0071",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Cannot or can only barely perform the task because of slowing, interruptions, or decrements"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            }, {
+              "id" : "left_hand",
+              "name" : "Left hand",
+              "localizedName" : "Left hand",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0066",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Left hand"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0064]/items[at0066]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0072",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No problems"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0073",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) the regular rhythm is broken with one or two interruptions or hesitations of the movement; b) slight slowing; c) the amplitude decrements near the end of the task"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0074",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) 3 to 5 interruptions during the movements; b) mild slowing; c) the amplitude decrements midway in the task"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0075",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) more than 5 interruptions during the movement or at least one longer arrest (freeze) in ongoing movement; b) moderate slowing; c) the amplitude decrements starting after the 1st open-and-close sequence"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0076",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Cannot or can only barely perform the task because of slowing, interruptions, or decrements"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            } ]
+          }, {
+            "id" : "a3.6._pronation-supination_movements_of_hands",
+            "name" : "3.6. Pronation-supination movements of hands",
+            "localizedName" : "3.6. Pronation-supination movements of hands",
+            "rmType" : "CLUSTER",
+            "nodeId" : "at0077",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "3.6. Pronation-supination movements of hands"
+            },
+            "localizedDescriptions" : {
+              "en" : "Test each hand separately. Demonstrate the task, but do not continue to\nperform the task while the patient is being tested. Instruct the patient to extend the arm out in front of\nhis/her body with the palms down, and then to turn the palm up and down alternately 10 times as fast\nand as fully as possible. Rate each side separately, evaluating speed, amplitude, hesitations, halts, and\ndecrementing amplitude."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0077]",
+            "children" : [ {
+              "id" : "right_hand",
+              "name" : "Right hand",
+              "localizedName" : "Right hand",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0078",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Right hand"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0077]/items[at0078]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0085",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No problems"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0086",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) the regular rhythm is broken with one or two interruptions or hesitations of the movement; b) slight slowing; c) the amplitude decrements near the end of the sequence"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0087",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) 3 to 5 interruptions during the movements; b) mild slowing; c) the amplitude decrements midway in the sequence"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0088",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) more than 5 interruptions during the movement or at least one longer arrest (freeze) in ongoing movement; b) moderate slowing; c) the amplitude decrements starting after the 1st supination-pronation sequence"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0089",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Cannot or can only barely perform the task because of slowing, interruptions, or decrements"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            }, {
+              "id" : "left_hand",
+              "name" : "Left hand",
+              "localizedName" : "Left hand",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0079",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Left hand"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0077]/items[at0079]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0090",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No problems"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0091",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) the regular rhythm is broken with one or two interruptions or hesitations of the movement; b) slight slowing; c) the amplitude decrements near the end of the sequence"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0092",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) 3 to 5 interruptions during the movements; b) mild slowing; c) the amplitude decrements midway in the sequence"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0093",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) more than 5 interruptions during the movement or at least one longer arrest (freeze) in ongoing movement; b) moderate slowing; c) the amplitude decrements starting after the 1st supination-pronation sequence"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0094",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Cannot or can only barely perform the task because of slowing, interruptions, or decrements"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            } ]
+          }, {
+            "id" : "a3.7._toe_tapping",
+            "name" : "3.7. Toe tapping",
+            "localizedName" : "3.7. Toe tapping",
+            "rmType" : "CLUSTER",
+            "nodeId" : "at0095",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "3.7. Toe tapping"
+            },
+            "localizedDescriptions" : {
+              "en" : "Have the patient sit in a straight-backed chair with arms, both feet on the floor.\nTest each foot separately. Demonstrate the task, but do not continue to perform the task while the\npatient is being tested. Instruct the patient to place the heel on the ground in a comfortable position and\nthen tap the toes 10 times as big and as fast as possible. Rate each side separately, evaluating speed,\namplitude, hesitations, halts, and decrementing amplitude."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0095]",
+            "children" : [ {
+              "id" : "right_foot",
+              "name" : "Right foot",
+              "localizedName" : "Right foot",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0096",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Right foot"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0095]/items[at0096]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0098",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No problems"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0099",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) the regular rhythm is broken with one or two interruptions or hesitations of the tapping movement; b) slight slowing; c) amplitude decrements near the end of the ten taps"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0100",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) 3 to 5 interruptions during the tapping movements; b) mild slowing; c) amplitude decrements midway in the task"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0101",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) more than 5 interruptions during the tapping movements or at least one longer arrest (freeze) in ongoing movement; b) moderate slowing; c) amplitude decrements after the 1st tap"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0102",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Cannot or can only barely perform the task because of slowing, interruptions or decrements"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            }, {
+              "id" : "left_foot",
+              "name" : "Left foot",
+              "localizedName" : "Left foot",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0097",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Left foot"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0095]/items[at0097]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0103",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No problems"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0104",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) the regular rhythm is broken with one or two interruptions or hesitations of the tapping movement; b) slight slowing; c) amplitude decrements near the end of the ten taps"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0105",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) 3 to 5 interruptions during the tapping movements; b) mild"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0106",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) more than 5 interruptions during the tapping movements or at least one longer arrest (freeze) in ongoing movement; b) moderate slowing; c) amplitude decrements after the 1st tap"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0107",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Cannot or can only barely perform the task because of slowing, interruptions or decrements"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            } ]
+          }, {
+            "id" : "a3.8._leg_agility",
+            "name" : "3.8. Leg agility",
+            "localizedName" : "3.8. Leg agility",
+            "rmType" : "CLUSTER",
+            "nodeId" : "at0108",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "3.8. Leg agility"
+            },
+            "localizedDescriptions" : {
+              "en" : "Have the patient sit in a straight-backed chair with arms. The patient should\nhave both feet comfortably on the floor. Test each leg separately. Demonstrate the task, but do not\ncontinue to perform the task while the patient is being tested. Instruct the patient to place the foot on the\nground in a comfortable position and then raise and stomp the foot on the ground 10 times as high and\nas fast as possible. Rate each side separately, evaluating speed, amplitude, hesitations, halts and\ndecrementing amplitude.\n"
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0108]",
+            "children" : [ {
+              "id" : "right_leg",
+              "name" : "Right leg",
+              "localizedName" : "Right leg",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0109",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Right leg"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0108]/items[at0109]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0111",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No problems"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0112",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) the regular rhythm is broken with one or two interruptions or hesitations of the movement; b) slight slowing; c) amplitude decrements near the end of the task"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0113",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) 3 to 5 interruptions during the movements; b) mild slowness; c) amplitude decrements midway in the task"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0114",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) more than 5 interruptions during the movement or at least one longer arrest (freeze) in ongoing movement; b) moderate slowing in speed; c) amplitude decrements after the 1st tap"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0115",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Cannot or can only barely perform the task because of slowing, interruptions, or decrements"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            }, {
+              "id" : "left_leg",
+              "name" : "Left leg",
+              "localizedName" : "Left leg",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0110",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Left leg"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0108]/items[at0110]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0116",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No problems"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0117",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) the regular rhythm is broken with one or two interruptions or hesitations of the movement; b) slight slowing; c) amplitude decrements near the end of the task"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0118",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) 3 to 5 interruptions during the movements; b) mild slowness; c) amplitude decrements midway in the task"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0119",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Any of the following: a) more than 5 interruptions during the movement or at least one longer arrest (freeze) in ongoing movement; b) moderate slowing in speed; c) amplitude decrements after the 1st tap"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0120",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Cannot or can only barely perform the task because of slowing, interruptions, or decrements"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            } ]
+          }, {
+            "id" : "a3.9._arising_from_chair",
+            "name" : "3.9. Arising from chair",
+            "localizedName" : "3.9. Arising from chair",
+            "rmType" : "DV_ORDINAL",
+            "nodeId" : "at0121",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "3.9. Arising from chair"
+            },
+            "localizedDescriptions" : {
+              "en" : "Have the patient sit in a straight-backed chair with arms, with both feet on the\nfloor and sitting back in the chair (if the patient is not too short). Ask the patient to cross his/her arms\nacross the chest and then to stand up. If the patient is not successful, repeat this attempt up to a\nmaximum of two more times. If still unsuccessful, allow the patient to move forward in the chair to arise\nwith arms folded across the chest. Allow only one attempt in this situation. If unsuccessful, allow the\npatient to push off using his/her hands on the arms of the chair. Allow a maximum of three trials of\npushing off. If still not successful, assist the patient to arise. After the patient stands up, observe the\nposture for item 3.13.\n"
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0121]/value",
+            "inputs" : [ {
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "at0122",
+                "label" : "Normal",
+                "localizedLabels" : {
+                  "en" : "Normal"
+                },
+                "localizedDescriptions" : {
+                  "en" : "No problems. Able to arise quickly without hesitation"
+                },
+                "ordinal" : 0
+              }, {
+                "value" : "at0123",
+                "label" : "Slight",
+                "localizedLabels" : {
+                  "en" : "Slight"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Arising is slower than normal; or may need more than one attempt; or may need to move forward in the chair to arise. No need to use the arms of the chair"
+                },
+                "ordinal" : 1
+              }, {
+                "value" : "at0124",
+                "label" : "Mild",
+                "localizedLabels" : {
+                  "en" : "Mild"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Pushes self up from the arms of the chair without difficulty"
+                },
+                "ordinal" : 2
+              }, {
+                "value" : "at0125",
+                "label" : "Moderate",
+                "localizedLabels" : {
+                  "en" : "Moderate"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Needs to push off, but tends to fall back; or may have to try more than one time using the arms of the chair, but can get up without help"
+                },
+                "ordinal" : 3
+              }, {
+                "value" : "at0126",
+                "label" : "Severe",
+                "localizedLabels" : {
+                  "en" : "Severe"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Unable to arise without help"
+                },
+                "ordinal" : 4
+              } ]
+            } ]
+          }, {
+            "id" : "a3.10._gait",
+            "name" : "3.10. Gait",
+            "localizedName" : "3.10. Gait",
+            "rmType" : "DV_ORDINAL",
+            "nodeId" : "at0127",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "3.10. Gait"
+            },
+            "localizedDescriptions" : {
+              "en" : "Testing gait is best performed by having the patient walking away from and\ntowards the examiner so that both right and left sides of the body can be easily observed\nsimultaneously. The patient should walk at least 10 meters (30 feet), then turn around and return to\nthe examiner. This item measures multiple behaviors: stride amplitude, stride speed, height of foot lift,\nheel strike during walking, turning, and arm swing, but not freezing. Assess also for “freezing of gait”\n(next item 3.11) while patient is walking. Observe posture for item 3.13."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0127]/value",
+            "inputs" : [ {
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "at0128",
+                "label" : "Normal",
+                "localizedLabels" : {
+                  "en" : "Normal"
+                },
+                "localizedDescriptions" : {
+                  "en" : "No problems"
+                },
+                "ordinal" : 0
+              }, {
+                "value" : "at0129",
+                "label" : "Slight",
+                "localizedLabels" : {
+                  "en" : "Slight"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Independent walking with minor gait impairment"
+                },
+                "ordinal" : 1
+              }, {
+                "value" : "at0130",
+                "label" : "Mild",
+                "localizedLabels" : {
+                  "en" : "Mild"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Independent walking but with substantial gait impairment"
+                },
+                "ordinal" : 2
+              }, {
+                "value" : "at0131",
+                "label" : "Moderate",
+                "localizedLabels" : {
+                  "en" : "Moderate"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Requires an assistance device for safe walking (walking stick, walker) but not a person"
+                },
+                "ordinal" : 3
+              }, {
+                "value" : "at0132",
+                "label" : "Severe",
+                "localizedLabels" : {
+                  "en" : "Severe"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Cannot walk at all or only with another person’s assistance"
+                },
+                "ordinal" : 4
+              } ]
+            } ]
+          }, {
+            "id" : "a3.11._freezing_of_gait",
+            "name" : "3.11. Freezing of gait",
+            "localizedName" : "3.11. Freezing of gait",
+            "rmType" : "DV_ORDINAL",
+            "nodeId" : "at0133",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "3.11. Freezing of gait"
+            },
+            "localizedDescriptions" : {
+              "en" : "While assessing gait, also assess for the presence of any gait freezing\nepisodes. Observe for start hesitation and stuttering movements especially when turning and reaching\nthe end of the task. To the extent that safety permits, patients may NOT use sensory tricks during the\nassessment."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0133]/value",
+            "inputs" : [ {
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "at0134",
+                "label" : "Normal",
+                "localizedLabels" : {
+                  "en" : "Normal"
+                },
+                "localizedDescriptions" : {
+                  "en" : "No freezing"
+                },
+                "ordinal" : 0
+              }, {
+                "value" : "at0135",
+                "label" : "Slight",
+                "localizedLabels" : {
+                  "en" : "Slight"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Freezes on starting, turning, or walking through doorway with a single halt during any of these events, but then continues smoothly without freezing during straight walking"
+                },
+                "ordinal" : 1
+              }, {
+                "value" : "at0136",
+                "label" : "Mild",
+                "localizedLabels" : {
+                  "en" : "Mild"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Freezes on starting, turning, or walking through doorway with more than one halt during any of these activities, but continues smoothly without freezing during straight walking"
+                },
+                "ordinal" : 2
+              }, {
+                "value" : "at0137",
+                "label" : "Moderate",
+                "localizedLabels" : {
+                  "en" : "Moderate"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Freezes once during straight walking"
+                },
+                "ordinal" : 3
+              }, {
+                "value" : "at0138",
+                "label" : "Severe",
+                "localizedLabels" : {
+                  "en" : "Severe"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Freezes multiple times during straight walking"
+                },
+                "ordinal" : 4
+              } ]
+            } ]
+          }, {
+            "id" : "a3.12._postural_stability",
+            "name" : "3.12. Postural stability",
+            "localizedName" : "3.12. Postural stability",
+            "rmType" : "DV_ORDINAL",
+            "nodeId" : "at0139",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "3.12. Postural stability"
+            },
+            "localizedDescriptions" : {
+              "en" : "The test examines the response to sudden body displacement produced by a\nquick, forceful pull on the shoulders while the patient is standing erect with eyes open and feet\ncomfortably apart and parallel to each other. Test retropulsion. Stand behind the patient and instruct\nthe patient on what is about to happen. Explain that s/he is allowed to take a step backwards to avoid\nfalling. There should be a solid wall behind the examiner, at least 1-2 meters away to allow for the\nobservation of the number of retropulsive steps. The first pull is an instructional demonstration and is\npurposely milder and not rated. The second time the shoulders are pulled briskly and forcefully towards\nthe examiner with enough force to displace the center of gravity so that patient MUST take a step\nbackwards. The examiner needs to be ready to catch the patient, but must stand sufficiently back so as\nto allow enough room for the patient to take several steps to recover independently. Do not allow the\npatient to flex the body abnormally forward in anticipation of the pull. Observe for the number of steps\nbackwards or falling. Up to and including two steps for recovery is considered normal, so abnormal\nratings begin with three steps. If the patient fails to understand the test, the examiner can repeat the\ntest so that the rating is based on an assessment that the examiner feels reflects the patient’s limitations\nrather than misunderstanding or lack of preparedness. Observe standing posture for item 3.13."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0139]/value",
+            "inputs" : [ {
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "at0140",
+                "label" : "Normal",
+                "localizedLabels" : {
+                  "en" : "Normal"
+                },
+                "localizedDescriptions" : {
+                  "en" : "No problems. Recovers with one or two steps"
+                },
+                "ordinal" : 0
+              }, {
+                "value" : "at0141",
+                "label" : "Slight",
+                "localizedLabels" : {
+                  "en" : "Slight"
+                },
+                "localizedDescriptions" : {
+                  "en" : "3-5 steps, but subject recovers unaided"
+                },
+                "ordinal" : 1
+              }, {
+                "value" : "at0142",
+                "label" : "Mild",
+                "localizedLabels" : {
+                  "en" : "Mild"
+                },
+                "localizedDescriptions" : {
+                  "en" : "More than 5 steps, but subject recovers unaided"
+                },
+                "ordinal" : 2
+              }, {
+                "value" : "at0143",
+                "label" : "Moderate",
+                "localizedLabels" : {
+                  "en" : "Moderate"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Stands safely, but with absence of postural response; falls if not caught by examiner"
+                },
+                "ordinal" : 3
+              }, {
+                "value" : "at0144",
+                "label" : "Severe",
+                "localizedLabels" : {
+                  "en" : "Severe"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Very unstable, tends to lose balance spontaneously or with just a gentle pull on the shoulders"
+                },
+                "ordinal" : 4
+              } ]
+            } ]
+          }, {
+            "id" : "a3.13._posture",
+            "name" : "3.13. Posture",
+            "localizedName" : "3.13. Posture",
+            "rmType" : "DV_ORDINAL",
+            "nodeId" : "at0145",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "3.13. Posture"
+            },
+            "localizedDescriptions" : {
+              "en" : "Posture is assessed with the patient standing erect after arising from a chair,\nduring walking, and while being tested for postural reflexes. If you notice poor posture, tell the patient to\nstand up straight and see if the posture improves (see option 2 below). Rate the worst posture seen in\nthese three observation points. Observe for flexion and side-to-side leaning."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0145]/value",
+            "inputs" : [ {
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "at0146",
+                "label" : "Normal",
+                "localizedLabels" : {
+                  "en" : "Normal"
+                },
+                "localizedDescriptions" : {
+                  "en" : "No problems"
+                },
+                "ordinal" : 0
+              }, {
+                "value" : "at0147",
+                "label" : "Slight",
+                "localizedLabels" : {
+                  "en" : "Slight"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Not quite erect, but posture could be normal for older person"
+                },
+                "ordinal" : 1
+              }, {
+                "value" : "at0148",
+                "label" : "Mild",
+                "localizedLabels" : {
+                  "en" : "Mild"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Definite flexion, scoliosis or leaning to one side, but patient can correct posture to normal posture when asked to do so"
+                },
+                "ordinal" : 2
+              }, {
+                "value" : "at0149",
+                "label" : "Moderate",
+                "localizedLabels" : {
+                  "en" : "Moderate"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Stooped posture, scoliosis or leaning to one side that cannot be corrected volitionally to a normal posture by the patient"
+                },
+                "ordinal" : 3
+              }, {
+                "value" : "at0150",
+                "label" : "Severe",
+                "localizedLabels" : {
+                  "en" : "Severe"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Flexion, scoliosis or leaning with extreme abnormality of posture"
+                },
+                "ordinal" : 4
+              } ]
+            } ]
+          }, {
+            "id" : "a3.14._global_spontaneity_of_movements_body_bradykinesia",
+            "name" : "3.14. Global spontaneity of movements (body bradykinesia)",
+            "localizedName" : "3.14. Global spontaneity of movements (body bradykinesia)",
+            "rmType" : "DV_ORDINAL",
+            "nodeId" : "at0151",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "3.14. Global spontaneity of movements (body bradykinesia)"
+            },
+            "localizedDescriptions" : {
+              "en" : "This global rating combines all observations on slowness, hesitancy, and\nsmall amplitude and poverty of movement in general, including a reduction of gesturing and of crossing\nthe legs. This assessment is based on the examiner’s global impression after observing for\nspontaneous gestures while sitting, and the nature of arising and walking."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0151]/value",
+            "inputs" : [ {
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "at0152",
+                "label" : "Normal",
+                "localizedLabels" : {
+                  "en" : "Normal"
+                },
+                "localizedDescriptions" : {
+                  "en" : "No problems"
+                },
+                "ordinal" : 0
+              }, {
+                "value" : "at0153",
+                "label" : "Slight",
+                "localizedLabels" : {
+                  "en" : "Slight"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Slight global slowness and poverty of spontaneous movements"
+                },
+                "ordinal" : 1
+              }, {
+                "value" : "at0154",
+                "label" : "Mild",
+                "localizedLabels" : {
+                  "en" : "Mild"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Mild global slowness and poverty of spontaneous movements"
+                },
+                "ordinal" : 2
+              }, {
+                "value" : "at0155",
+                "label" : "Moderate",
+                "localizedLabels" : {
+                  "en" : "Moderate"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Moderate global slowness and poverty of spontaneous movements"
+                },
+                "ordinal" : 3
+              }, {
+                "value" : "at0156",
+                "label" : "Severe",
+                "localizedLabels" : {
+                  "en" : "Severe"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Severe global slowness and poverty of spontaneous movements"
+                },
+                "ordinal" : 4
+              } ]
+            } ]
+          }, {
+            "id" : "a3.15._postural_tremor_of_the_hands",
+            "name" : "3.15. Postural tremor of the hands",
+            "localizedName" : "3.15. Postural tremor of the hands",
+            "rmType" : "CLUSTER",
+            "nodeId" : "at0157",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "3.15. Postural tremor of the hands"
+            },
+            "localizedDescriptions" : {
+              "en" : "All tremor, including re-emergent rest tremor, that is present in this posture is\nto be included in this rating. Rate each hand separately. Rate the highest amplitude seen. Instruct the\npatient to stretch the arms out in front of the body with palms down. The wrist should be straight and\nthe fingers comfortably separated so that they do not touch each other. Observe this posture for 10\nseconds.\n"
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0157]",
+            "children" : [ {
+              "id" : "right_hand",
+              "name" : "Right hand",
+              "localizedName" : "Right hand",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0158",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Right hand"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0157]/items[at0158]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0160",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No tremor"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0161",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Tremor is present but less than 1 cm in amplitude"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0162",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Tremor is at least 1 but less than 3 cm in amplitude"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0163",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Tremor is at least 3 but less than 10 cm in amplitude"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0164",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Tremor is at least 10 cm in amplitude"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            }, {
+              "id" : "left_hand",
+              "name" : "Left hand",
+              "localizedName" : "Left hand",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0159",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Left hand"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0157]/items[at0159]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0165",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No tremor"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0166",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Tremor is present but less than 1 cm in amplitude"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0167",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Tremor is at least 1 but less than 3 cm in amplitude"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0168",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Tremor is at least 3 but less than 10 cm in amplitude"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0169",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Tremor is at least 10 cm in amplitude"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            } ]
+          }, {
+            "id" : "a3.16._kinetic_tremor_of_the_hands",
+            "name" : "3.16. Kinetic tremor of the hands",
+            "localizedName" : "3.16. Kinetic tremor of the hands",
+            "rmType" : "CLUSTER",
+            "nodeId" : "at0170",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "3.16. Kinetic tremor of the hands"
+            },
+            "localizedDescriptions" : {
+              "en" : "This is tested by the finger-to-nose maneuver. With the arm starting from the\noutstretched position, have the patient perform at least three finger-to-nose maneuvers with each hand\nreaching as far as possible to touch the examiner’s finger. The finger-to-nose maneuver should be\nperformed slowly enough not to hide any tremor that could occur with very fast arm movements. Repeat\nwith the other hand, rating each hand separately. The tremor can be present throughout the movement\nor as the tremor reaches either target (nose or finger). Rate the highest amplitude seen.\n"
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0170]",
+            "children" : [ {
+              "id" : "right_hand",
+              "name" : "Right hand",
+              "localizedName" : "Right hand",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0171",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Right hand"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0170]/items[at0171]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0173",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No tremor"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0174",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Tremor is present but less than 1 cm in amplitude"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0175",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Tremor is at least 1 but less than 3 cm in amplitude"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0176",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Tremor is at least 3 but less than 10 cm in amplitude"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0177",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Tremor is at least 10 cm in amplitude"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            }, {
+              "id" : "left_hand",
+              "name" : "Left hand",
+              "localizedName" : "Left hand",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0172",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Left hand"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0170]/items[at0172]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0178",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No tremor"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0179",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Tremor is present but less than 1 cm in amplitude"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0180",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Tremor is at least 1 but less than 3 cm in amplitude"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0181",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Tremor is at least 3 but less than 10 cm in amplitude"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0182",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "Tremor is at least 10 cm in amplitude"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            } ]
+          }, {
+            "id" : "a3.17._rest_tremor_amplitude",
+            "name" : "3.17. Rest tremor amplitude",
+            "localizedName" : "3.17. Rest tremor amplitude",
+            "rmType" : "CLUSTER",
+            "nodeId" : "at0183",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "3.17. Rest tremor amplitude"
+            },
+            "localizedDescriptions" : {
+              "en" : " This and the next item have been placed purposefully at the end of the\nexamination to allow the rater to gather observations on rest tremor that may appear at any time during\nthe exam, including when quietly sitting, during walking, and during activities when some body parts are\nmoving but others are at rest. Score the maximum amplitude that is seen at any time as the final score.\nRate only the amplitude and not the persistence or the intermittency of the tremor.\nAs part of this rating, the patient should sit quietly in a chair with the hands placed on the arms of the\nchair (not in the lap) and the feet comfortably supported on the floor for 10 seconds with no other\ndirectives. Rest tremor is assessed separately for all four limbs and also for the lip/jaw. Rate only the\nmaximum amplitude that is seen at any time as the final rating."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0183]",
+            "children" : [ {
+              "id" : "right_upper_extremity",
+              "name" : "Right upper extremity",
+              "localizedName" : "Right upper extremity",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0184",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Right upper extremity"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0183]/items[at0184]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0189",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No tremor"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0190",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "< 1 cm in maximal amplitude"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0191",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "≥ 1 cm but < 3 cm in maximal amplitude"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0192",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "≥ 3 cm but < 10 cm in maximal amplitude"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0193",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "≥ 10 cm in maximal amplitude"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            }, {
+              "id" : "left_upper_extremity",
+              "name" : "Left upper extremity",
+              "localizedName" : "Left upper extremity",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0185",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Left upper extremity"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0183]/items[at0185]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0194",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No tremor"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0195",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "< 1 cm in maximal amplitude"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0196",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "≥ 1 cm but < 3 cm in maximal amplitude"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0197",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "≥ 3 cm but < 10 cm in maximal amplitude"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0198",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "≥ 10 cm in maximal amplitude"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            }, {
+              "id" : "right_lower_extremity",
+              "name" : "Right lower extremity",
+              "localizedName" : "Right lower extremity",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0186",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Right lower extremity"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0183]/items[at0186]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0199",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No tremor"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0200",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "< 1 cm in maximal amplitude"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0201",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "≥ 1 cm but < 3 cm in maximal amplitude"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0202",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "≥ 3 cm but < 10 cm in maximal amplitude"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0203",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "≥ 10 cm in maximal amplitude"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            }, {
+              "id" : "left_lower_extremity",
+              "name" : "Left lower extremity",
+              "localizedName" : "Left lower extremity",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0187",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Left lower extremity"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0183]/items[at0187]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0204",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No tremor"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0205",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "< 1 cm in maximal amplitude"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0206",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "≥ 1 cm but < 3 cm in maximal amplitude"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0207",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "≥ 3 cm but < 10 cm in maximal amplitude"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0208",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "≥ 10 cm in maximal amplitude"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            }, {
+              "id" : "lip_jaw",
+              "name" : "Lip/Jaw",
+              "localizedName" : "Lip/Jaw",
+              "rmType" : "DV_ORDINAL",
+              "nodeId" : "at0188",
+              "min" : 0,
+              "max" : 1,
+              "localizedNames" : {
+                "en" : "Lip/Jaw"
+              },
+              "localizedDescriptions" : {
+                "en" : ""
+              },
+              "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0183]/items[at0188]/value",
+              "inputs" : [ {
+                "type" : "CODED_TEXT",
+                "list" : [ {
+                  "value" : "at0209",
+                  "label" : "Normal",
+                  "localizedLabels" : {
+                    "en" : "Normal"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "No tremor"
+                  },
+                  "ordinal" : 0
+                }, {
+                  "value" : "at0210",
+                  "label" : "Slight",
+                  "localizedLabels" : {
+                    "en" : "Slight"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "< 1 cm in maximal amplitude"
+                  },
+                  "ordinal" : 1
+                }, {
+                  "value" : "at0211",
+                  "label" : "Mild",
+                  "localizedLabels" : {
+                    "en" : "Mild"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "≥ 1 cm but < 2 cm in maximal amplitude"
+                  },
+                  "ordinal" : 2
+                }, {
+                  "value" : "at0212",
+                  "label" : "Moderate",
+                  "localizedLabels" : {
+                    "en" : "Moderate"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "≥ 2 cm but < 3 cm in maximal amplitude"
+                  },
+                  "ordinal" : 3
+                }, {
+                  "value" : "at0213",
+                  "label" : "Severe",
+                  "localizedLabels" : {
+                    "en" : "Severe"
+                  },
+                  "localizedDescriptions" : {
+                    "en" : "≥ 3 cm in maximal amplitude"
+                  },
+                  "ordinal" : 4
+                } ]
+              } ]
+            } ]
+          }, {
+            "id" : "a3.18._constancy_of_rest_tremor",
+            "name" : "3.18. Constancy of rest tremor",
+            "localizedName" : "3.18. Constancy of rest tremor",
+            "rmType" : "DV_ORDINAL",
+            "nodeId" : "at0214",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "3.18. Constancy of rest tremor"
+            },
+            "localizedDescriptions" : {
+              "en" : "This item receives one rating for all rest tremor and focuses on the constancy\nof rest tremor during the examination period when different body parts are variously at rest. It is rated\npurposefully at the end of the examination so that several minutes of information can be coalesced into\nthe rating.\n"
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0214]/value",
+            "inputs" : [ {
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "at0215",
+                "label" : "Normal",
+                "localizedLabels" : {
+                  "en" : "Normal"
+                },
+                "localizedDescriptions" : {
+                  "en" : "No tremor"
+                },
+                "ordinal" : 0
+              }, {
+                "value" : "at0216",
+                "label" : "Slight",
+                "localizedLabels" : {
+                  "en" : "Slight"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Tremor at rest is present ≤ 25% of the entire examination period"
+                },
+                "ordinal" : 1
+              }, {
+                "value" : "at0217",
+                "label" : "Mild",
+                "localizedLabels" : {
+                  "en" : "Mild"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Tremor at rest is present 26-50% of the entire examination period"
+                },
+                "ordinal" : 2
+              }, {
+                "value" : "at0218",
+                "label" : "Moderate",
+                "localizedLabels" : {
+                  "en" : "Moderate"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Tremor at rest is present 51-75% of the entire examination period"
+                },
+                "ordinal" : 3
+              }, {
+                "value" : "at0219",
+                "label" : "Severe",
+                "localizedLabels" : {
+                  "en" : "Severe"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Tremor at rest is present > 75% of the entire examination period"
+                },
+                "ordinal" : 4
+              } ]
+            } ]
+          }, {
+            "id" : "total_score",
+            "name" : "Total score",
+            "localizedName" : "Total score",
+            "rmType" : "DV_COUNT",
+            "nodeId" : "at0227",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "Total score"
+            },
+            "localizedDescriptions" : {
+              "en" : "The total score from items 3.1 to 3.18."
+            },
+            "annotations" : {
+              "comment" : "min:  >=0; max: <=132"
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0227]/value",
+            "inputs" : [ {
+              "type" : "INTEGER"
+            } ]
+          }, {
+            "id" : "dyskinesia_during_examination_0_1",
+            "name" : "Dyskinesia during examination 0/1?",
+            "localizedName" : "Dyskinesia during examination 0/1?",
+            "rmType" : "DV_BOOLEAN",
+            "nodeId" : "at0240",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "Dyskinesia during examination 0/1?"
+            },
+            "localizedDescriptions" : {
+              "en" : "True if dyskinesias (chorea or dystonia) were present during examination"
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0240]/value",
+            "inputs" : [ {
+              "type" : "BOOLEAN"
+            } ]
+          }, {
+            "id" : "dyskinesia_state",
+            "name" : "Dyskinesia state",
+            "localizedName" : "Dyskinesia state",
+            "rmType" : "DV_CODED_TEXT",
+            "nodeId" : "at0236",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "Dyskinesia state"
+            },
+            "localizedDescriptions" : {
+              "en" : "Indicate whether the dyskinesias (chorea or dystonia) movements interfered with your ratings of items 3.1 to 3.18 or not."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0236]/value",
+            "inputs" : [ {
+              "suffix" : "code",
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "at0238",
+                "label" : "Dyskinesia with rating interference",
+                "localizedLabels" : {
+                  "en" : "Dyskinesia with rating interference"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Dyskinesias (chorea or dystonia) were present during examination and these movements interfere with your ratings"
+                }
+              }, {
+                "value" : "at0239",
+                "label" : "Dyskinesia without rating interference",
+                "localizedLabels" : {
+                  "en" : "Dyskinesia without rating interference"
+                },
+                "localizedDescriptions" : {
+                  "en" : "Dyskinesias (chorea or dystonia) were present during examination but  these movements did not interfere with your ratings"
+                }
+              } ]
+            } ]
+          }, {
+            "id" : "hoehn_and_yahr_stage",
+            "name" : "Hoehn and yahr stage",
+            "localizedName" : "Hoehn and yahr stage",
+            "rmType" : "DV_ORDINAL",
+            "nodeId" : "at0220",
+            "min" : 0,
+            "max" : 1,
+            "localizedNames" : {
+              "en" : "Hoehn and yahr stage"
+            },
+            "localizedDescriptions" : {
+              "en" : "Represent the severity level of Parkinson’s disease motor symptoms based on the Hoehn and Yahr scale."
+            },
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/data[at0003]/items[at0220]/value",
+            "inputs" : [ {
+              "type" : "CODED_TEXT",
+              "list" : [ {
+                "value" : "at0221",
+                "label" : "Asymptomatic",
+                "localizedLabels" : {
+                  "en" : "Asymptomatic"
+                },
+                "localizedDescriptions" : {
+                  "en" : ""
+                },
+                "ordinal" : 0
+              }, {
+                "value" : "at0222",
+                "label" : "Unilateral involvement only",
+                "localizedLabels" : {
+                  "en" : "Unilateral involvement only"
+                },
+                "localizedDescriptions" : {
+                  "en" : ""
+                },
+                "ordinal" : 1
+              }, {
+                "value" : "at0223",
+                "label" : "Bilateral involvement without impairment of balance",
+                "localizedLabels" : {
+                  "en" : "Bilateral involvement without impairment of balance"
+                },
+                "localizedDescriptions" : {
+                  "en" : ""
+                },
+                "ordinal" : 2
+              }, {
+                "value" : "at0224",
+                "label" : "Mild to moderate involvement; some postural instability but physically independent; needs assistance to recover from pull test",
+                "localizedLabels" : {
+                  "en" : "Mild to moderate involvement; some postural instability but physically independent; needs assistance to recover from pull test"
+                },
+                "localizedDescriptions" : {
+                  "en" : ""
+                },
+                "ordinal" : 3
+              }, {
+                "value" : "at0225",
+                "label" : "Severe disability; still able to walk or stand unassisted",
+                "localizedLabels" : {
+                  "en" : "Severe disability; still able to walk or stand unassisted"
+                },
+                "localizedDescriptions" : {
+                  "en" : ""
+                },
+                "ordinal" : 4
+              }, {
+                "value" : "at0226",
+                "label" : "Wheelchair bound or bedridden unless aided",
+                "localizedLabels" : {
+                  "en" : "Wheelchair bound or bedridden unless aided"
+                },
+                "localizedDescriptions" : {
+                  "en" : ""
+                },
+                "ordinal" : 5
+              } ]
+            } ]
+          }, {
+            "id" : "time",
+            "name" : "Time",
+            "rmType" : "DV_DATE_TIME",
+            "min" : 1,
+            "max" : 1,
+            "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/data[at0001]/events[at0002]/time",
+            "inputs" : [ {
+              "type" : "DATETIME"
+            } ],
+            "inContext" : true
+          } ]
+        }, {
+          "id" : "language",
+          "name" : "Language",
+          "rmType" : "CODE_PHRASE",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/language",
+          "inContext" : true
+        }, {
+          "id" : "encoding",
+          "name" : "Encoding",
+          "rmType" : "CODE_PHRASE",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/encoding",
+          "inContext" : true
+        }, {
+          "id" : "subject",
+          "name" : "Subject",
+          "rmType" : "PARTY_PROXY",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.part_iii.v0]/items[openEHR-EHR-OBSERVATION.updrs_part_iii.v0]/subject",
+          "inputs" : [ {
+            "suffix" : "id",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "id_scheme",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "id_namespace",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "name",
+            "type" : "TEXT"
+          } ],
+          "inContext" : true
+        } ]
+      } ]
+    }, {
+      "id" : "part_iv",
+      "name" : "Part IV",
+      "localizedName" : "Part IV",
+      "rmType" : "SECTION",
+      "nodeId" : "openEHR-EHR-SECTION.part_iv.v0",
+      "min" : 0,
+      "max" : 1,
+      "localizedNames" : {
+        "en" : "Part IV"
+      },
+      "localizedDescriptions" : {
+        "en" : "Part IV"
+      },
+      "aqlPath" : "/content[openEHR-EHR-SECTION.part_iv.v0]",
+      "children" : [ {
+        "id" : "motor_complications",
+        "name" : "Motor Complications",
+        "localizedName" : "Motor Complications",
+        "rmType" : "OBSERVATION",
+        "nodeId" : "at0002",
+        "min" : 0,
+        "max" : 1,
+        "localizedNames" : {
+          "en" : "Motor Complications"
+        },
+        "localizedDescriptions" : {
+          "en" : ""
+        },
+        "aqlPath" : "/content[openEHR-EHR-SECTION.part_iv.v0]/items[at0002]",
+        "children" : [ {
+          "id" : "language",
+          "name" : "Language",
+          "rmType" : "CODE_PHRASE",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.part_iv.v0]/items[at0002]/language",
+          "inContext" : true
+        }, {
+          "id" : "encoding",
+          "name" : "Encoding",
+          "rmType" : "CODE_PHRASE",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.part_iv.v0]/items[at0002]/encoding",
+          "inContext" : true
+        }, {
+          "id" : "subject",
+          "name" : "Subject",
+          "rmType" : "PARTY_PROXY",
+          "min" : 1,
+          "max" : 1,
+          "aqlPath" : "/content[openEHR-EHR-SECTION.part_iv.v0]/items[at0002]/subject",
+          "inputs" : [ {
+            "suffix" : "id",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "id_scheme",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "id_namespace",
+            "type" : "TEXT"
+          }, {
+            "suffix" : "name",
+            "type" : "TEXT"
+          } ],
+          "inContext" : true
+        } ]
+      } ]
+    }, {
+      "id" : "category",
+      "rmType" : "DV_CODED_TEXT",
+      "nodeId" : "",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/category",
+      "inputs" : [ {
+        "suffix" : "code",
+        "type" : "CODED_TEXT",
+        "list" : [ {
+          "value" : "433",
+          "label" : "event",
+          "localizedLabels" : {
+            "en" : "event"
+          }
+        } ],
+        "terminology" : "openehr"
+      } ],
+      "inContext" : true
+    }, {
+      "id" : "language",
+      "name" : "Language",
+      "rmType" : "CODE_PHRASE",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/language",
+      "inContext" : true
+    }, {
+      "id" : "territory",
+      "name" : "Territory",
+      "rmType" : "CODE_PHRASE",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/territory",
+      "inContext" : true
+    }, {
+      "id" : "composer",
+      "name" : "Composer",
+      "rmType" : "PARTY_PROXY",
+      "min" : 1,
+      "max" : 1,
+      "aqlPath" : "/composer",
+      "inputs" : [ {
+        "suffix" : "id",
+        "type" : "TEXT"
+      }, {
+        "suffix" : "id_scheme",
+        "type" : "TEXT"
+      }, {
+        "suffix" : "id_namespace",
+        "type" : "TEXT"
+      }, {
+        "suffix" : "name",
+        "type" : "TEXT"
+      } ],
+      "inContext" : true
+    } ]
+  }
+}
