@@ -1,0 +1,133 @@
+/* === NAVBAR ROOT === */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* === LEFT BRAND SECTION === */
+.navbar__brand {
+   display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.navbar__brand-name {
+   font-weight: 700;
+  font-size: 20px;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+/* === RIGHT SECTION === */
+.navbar__right {
+ margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+/* === CLOCK === */
+.navbar__clock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.2;
+}
+
+.navbar__time {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.navbar__date {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+/* === ICON BUTTONS === */
+.navbar__icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  font-size: 1.2rem;
+  border: none;
+  background: transparent;
+  border-radius: 50%;
+  color: rgb(1, 56, 1);
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.navbar__icon-btn:hover { background: var(--surface-2); }
+
+/* === USER SECTION === */
+.navbar__user {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding-left: 1rem;
+  border-left: 1px solid var(--border);
+}
+
+.navbar__avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  font-size: 1.2rem;
+}
+
+.navbar__user-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.navbar__user-name {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.navbar__user-role {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+/* === SIGN OUT BUTTON === */
+.navbar__signout {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.4rem 0.5rem;
+  border-radius: var(--radius-sm);
+  transition: background 0.15s, color 0.15s;
+}
+.navbar__signout:hover { background: var(--surface-2); color: var(--error); }
