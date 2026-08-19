@@ -65,6 +65,8 @@ patients.json / assessments.json  # file-based local persistence
 
 ```bash
 npm install
+npm install react-icons
+npm install express cors
 ```
 
 ## Configuration
